@@ -1,4 +1,14 @@
-export default function GameCard({ event, selectedPlayer }) {
+export default function GameCard({ event, selectedPlayer, showPlaying }) {
+  const getPlayingPlayers = (sittingPlayers) => {
+    // Get all players from the schedule data
+    const allPlayers = new Set();
+    // We need to extract all unique players from firstHalfSitting and secondHalfSitting
+    // For simplicity, we'll use a fixed roster based on the data
+    const roster = ["Josh", "Jack", "Ray", "John", "Nathan H", "Ravi", "Logan", "Kyle", "Nathan A"];
+    const playingPlayers = roster.filter(player => !sittingPlayers.includes(player));
+    return playingPlayers.join(", ") || "All";
+  };
+
   const getPlayingStatus = () => {
     if (!selectedPlayer) return null;
 
@@ -30,6 +40,11 @@ export default function GameCard({ event, selectedPlayer }) {
           <span className="text-lg">{playingStatus.icon}</span>
           {playingStatus.text}
         </p>
+      ) : showPlaying ? (
+        <div className="mt-2 text-sm text-blue-800">
+          <p><span className="font-medium">1st playing:</span> {getPlayingPlayers(event.firstHalfSitting)}</p>
+          <p><span className="font-medium">2nd playing:</span> {getPlayingPlayers(event.secondHalfSitting)}</p>
+        </div>
       ) : (
         <div className="mt-2 text-sm text-blue-800">
           <p><span className="font-medium">1st sitting:</span> {event.firstHalfSitting.join(", ")}</p>
