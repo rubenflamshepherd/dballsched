@@ -4,8 +4,22 @@ import ScheduleTimeline from "./components/Timeline";
 import scheduleData from "./data/schedule.json";
 
 function App() {
-  const [selectedPlayer, setSelectedPlayer] = useState("");
+  const [selectedPlayer, setSelectedPlayer] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("player") || "";
+  });
   const notificationTimeouts = useRef([]);
+
+  const handlePlayerChange = (player) => {
+    setSelectedPlayer(player);
+    const url = new URL(window.location);
+    if (player) {
+      url.searchParams.set("player", player);
+    } else {
+      url.searchParams.delete("player");
+    }
+    window.history.pushState({}, "", url);
+  };
 
   const players = useMemo(() => {
     const playerSet = new Set();
@@ -109,7 +123,7 @@ function App() {
         tournamentName={scheduleData.tournamentName}
         players={players}
         selectedPlayer={selectedPlayer}
-        onPlayerChange={setSelectedPlayer}
+        onPlayerChange={handlePlayerChange}
       />
       <main className="max-w-lg mx-auto">
         <ScheduleTimeline events={filteredEvents} selectedPlayer={selectedPlayer} />

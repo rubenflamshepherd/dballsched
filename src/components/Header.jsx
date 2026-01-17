@@ -4,9 +4,14 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 
 export default function Header({ teamName, tournamentName, players, selectedPlayer, onPlayerChange }) {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(true); // Start hidden to prevent flash
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Check scroll position after mount (when browser has restored scroll)
+    setIsScrolled(window.scrollY > 20);
+    setMounted(true);
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -47,7 +52,7 @@ export default function Header({ teamName, tournamentName, players, selectedPlay
           </Select>
         </FormControl>
       </div>
-      {!isScrolled && <p className="text-gray-300 mt-1 text-center">{tournamentName}</p>}
+      <p className={`text-gray-300 mt-4 text-center overflow-hidden ${mounted ? 'transition-all duration-200' : ''} ${isScrolled ? 'opacity-0 max-h-0 mt-0' : 'opacity-100 max-h-10'}`}>{tournamentName}</p>
     </header>
   );
 }
