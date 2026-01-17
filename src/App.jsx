@@ -8,6 +8,10 @@ function App() {
     const params = new URLSearchParams(window.location.search);
     return params.get("player") || "";
   });
+  const [showPlaying, setShowPlaying] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("view") === "playing";
+  });
   const notificationTimeouts = useRef([]);
 
   const handlePlayerChange = (player) => {
@@ -17,6 +21,17 @@ function App() {
       url.searchParams.set("player", player);
     } else {
       url.searchParams.delete("player");
+    }
+    window.history.pushState({}, "", url);
+  };
+
+  const handleToggleView = (isShowingPlaying) => {
+    setShowPlaying(isShowingPlaying);
+    const url = new URL(window.location);
+    if (isShowingPlaying) {
+      url.searchParams.set("view", "playing");
+    } else {
+      url.searchParams.delete("view");
     }
     window.history.pushState({}, "", url);
   };
@@ -124,9 +139,11 @@ function App() {
         players={players}
         selectedPlayer={selectedPlayer}
         onPlayerChange={handlePlayerChange}
+        showPlaying={showPlaying}
+        onToggleView={handleToggleView}
       />
       <main className="max-w-lg mx-auto">
-        <ScheduleTimeline events={filteredEvents} selectedPlayer={selectedPlayer} />
+        <ScheduleTimeline events={filteredEvents} selectedPlayer={selectedPlayer} showPlaying={showPlaying} />
       </main>
     </div>
   );
