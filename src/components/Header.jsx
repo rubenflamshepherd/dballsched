@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
-export default function Header({ teamName, tournamentName, players, selectedPlayer, onPlayerChange, showPlaying, onToggleView }) {
+export default function Header({ teamName, tournamentName, players, selectedPlayer, onPlayerChange, showPlaying, onToggleView, showBackLink = false }) {
   const [isScrolled, setIsScrolled] = useState(true); // Start hidden to prevent flash
   const [mounted, setMounted] = useState(false);
 
@@ -25,7 +26,16 @@ export default function Header({ teamName, tournamentName, players, selectedPlay
   return (
     <header className={`bg-gray-800 text-white px-4 sticky top-0 z-50 transition-all ${isScrolled ? 'py-3' : 'py-6'}`}>
       <div className="flex items-center justify-between gap-2">
-        <h1 className="text-2xl font-bold">{teamName}</h1>
+        <div className="flex items-center gap-2">
+          {showBackLink && (
+            <Link to="/" className="text-gray-400 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </Link>
+          )}
+          <h1 className="text-2xl font-bold">{teamName}</h1>
+        </div>
         <FormControl size="small">
           <Select
             value={selectedPlayer}
