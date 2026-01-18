@@ -1,0 +1,67 @@
+{
+  "teamName": "C-Class Heroes",
+  "tournamentName": "2026 Dodgeball Toronto Kickoff",
+  "events": [
+    {
+      "type": "ref",
+      "time": "13:25",
+      "court": "6",
+      "game": "Bankai 2.0 vs Reck my ASScend",
+      "refs": ["Raf", "Jack", "Josh"]
+    },
+    {
+      "type": "game",
+      "time": "14:00",
+      "opponent": "Cyber Ducks",
+      "court": "6",
+      "firstHalfSitting": ["Micaela", "Ky", "Raf"],
+      "secondHalfSitting": ["Leah", "Jack", "Josh"]
+    },
+    {
+      "type": "game",
+      "time": "15:10",
+      "opponent": "Mixed Berries",
+      "court": "7",
+      "firstHalfSitting": ["Cynthia", "Scott", "David"],
+      "secondHalfSitting": ["Hanna", "Jack", "Josh"]
+    },
+    {
+      "type": "ref",
+      "time": "15:45",
+      "court": "3",
+      "game": "Mildly Irritated vs Who Needs Jonny",
+      "refs": ["Cynthia", "Leah", "Mica"]
+    },
+    {
+      "type": "game",
+      "time": "16:20",
+      "opponent": "Chickens",
+      "court": "3",
+      "firstHalfSitting": ["Jenn", "Ky", "Raf"],
+      "secondHalfSitting": ["Micaela", "Scott", "David"]
+    },
+    {
+      "type": "game",
+      "time": "16:55",
+      "opponent": "Toronto Blitz",
+      "court": "5",
+      "firstHalfSitting": ["Leah", "Ky", "Raf"],
+      "secondHalfSitting": ["Cynthia", "Scott", "David"]
+    },
+    {
+      "type": "game",
+      "time": "17:30",
+      "opponent": "FAH",
+      "court": "5",
+      "firstHalfSitting": ["Hanna", "Jack", "Josh"],
+      "secondHalfSitting": ["Jenn", "Scott", "David"]
+    },
+    {
+      "type": "ref",
+      "time": "18:05",
+      "court": "2",
+      "game": "WHAM! vs Outsiders",
+      "refs": ["Ky", "Hanna", "Jenn"]
+    }
+  ]
+}
