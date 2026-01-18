@@ -1,6 +1,7 @@
 {
   "teamName": "BAVAP",
   "tournamentName": "2026 Dodgeball Toronto Kickoff",
+  "roster": ["Josh", "Jack", "Ray", "John", "Nathan H", "Ravi", "Logan", "Kyle", "Nathan A"],
   "events": [
     {
       "type": "game",

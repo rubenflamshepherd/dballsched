@@ -10,7 +10,7 @@ import GameCard from "./GameCard";
 import RefCard from "./RefCard";
 import BreakCard from "./BreakCard";
 
-export default function ScheduleTimeline({ events, selectedPlayer, showPlaying }) {
+export default function ScheduleTimeline({ events, selectedPlayer, showPlaying, roster }) {
   const itemRefs = useRef({});
 
   const sortedEvents = [...events].sort((a, b) => {
@@ -80,7 +80,7 @@ export default function ScheduleTimeline({ events, selectedPlayer, showPlaying }
             {index < sortedEvents.length - 1 && <TimelineConnector />}
           </TimelineSeparator>
           <TimelineContent>
-            {event.type === "game" && <GameCard event={event} selectedPlayer={selectedPlayer} showPlaying={showPlaying} />}
+            {event.type === "game" && <GameCard event={event} selectedPlayer={selectedPlayer} showPlaying={showPlaying} roster={roster} />}
             {event.type === "ref" && <RefCard event={event} />}
             {event.type === "break" && <BreakCard />}
           </TimelineContent>

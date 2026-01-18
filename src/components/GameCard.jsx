@@ -1,10 +1,5 @@
-export default function GameCard({ event, selectedPlayer, showPlaying }) {
+export default function GameCard({ event, selectedPlayer, showPlaying, roster }) {
   const getPlayingPlayers = (sittingPlayers) => {
-    // Get all players from the schedule data
-    const allPlayers = new Set();
-    // We need to extract all unique players from firstHalfSitting and secondHalfSitting
-    // For simplicity, we'll use a fixed roster based on the data
-    const roster = ["Josh", "Jack", "Ray", "John", "Nathan H", "Ravi", "Logan", "Kyle", "Nathan A"];
     const playingPlayers = roster.filter(player => !sittingPlayers.includes(player));
     return playingPlayers.join(", ") || "All";
   };
