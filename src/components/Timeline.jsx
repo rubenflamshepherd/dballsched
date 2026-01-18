@@ -29,6 +29,19 @@ export default function ScheduleTimeline({ events, selectedPlayer, showPlaying, 
     return eventMinutes < currentMinutes;
   };
 
+  const getCurrentIndex = () => {
+    for (let i = sortedEvents.length - 1; i >= 0; i--) {
+      const [hours, minutes] = sortedEvents[i].time.split(":").map(Number);
+      const eventMinutes = hours * 60 + minutes;
+      if (currentMinutes >= eventMinutes) {
+        return i;
+      }
+    }
+    return -1;
+  };
+
+  const currentIndex = getCurrentIndex();
+
   useEffect(() => {
     if (sortedEvents.length === 0) return;
 
@@ -80,9 +93,9 @@ export default function ScheduleTimeline({ events, selectedPlayer, showPlaying, 
             {index < sortedEvents.length - 1 && <TimelineConnector />}
           </TimelineSeparator>
           <TimelineContent>
-            {event.type === "game" && <GameCard event={event} selectedPlayer={selectedPlayer} showPlaying={showPlaying} roster={roster} />}
-            {event.type === "ref" && <RefCard event={event} />}
-            {event.type === "break" && <BreakCard />}
+            {event.type === "game" && <GameCard event={event} selectedPlayer={selectedPlayer} showPlaying={showPlaying} roster={roster} isCurrent={index === currentIndex} />}
+            {event.type === "ref" && <RefCard event={event} isCurrent={index === currentIndex} />}
+            {event.type === "break" && <BreakCard isCurrent={index === currentIndex} />}
           </TimelineContent>
         </TimelineItem>
       ))}
