@@ -1,6 +1,6 @@
-export default function RefCard({ event }) {
+export default function RefCard({ event, isCurrent }) {
   return (
-    <div className="bg-orange-100 border-l-4 border-orange-500 rounded-lg p-3 shadow-sm">
+    <div className={`bg-orange-100 border-l-4 border-orange-500 rounded-lg p-3 ${isCurrent ? 'shadow-lg shadow-orange-400/50' : 'shadow-sm'}`}>
       <div className="flex justify-between items-start">
         <p className="text-orange-700 font-semibold">Court {event.court}</p>
         <span className="bg-orange-500 text-white text-xs px-2 py-1 rounded">Reffing</span>
