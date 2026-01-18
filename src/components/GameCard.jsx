@@ -1,4 +1,4 @@
-export default function GameCard({ event, selectedPlayer, showPlaying, roster, isCurrent }) {
+export default function GameCard({ event, selectedPlayer, showPlaying, roster }) {
   const getPlayingPlayers = (sittingPlayers) => {
     const playingPlayers = roster.filter(player => !sittingPlayers.includes(player));
     return playingPlayers.join(", ") || "All";
@@ -24,7 +24,7 @@ export default function GameCard({ event, selectedPlayer, showPlaying, roster, i
   const playingStatus = getPlayingStatus();
 
   return (
-    <div className={`bg-blue-100 border-l-4 border-blue-500 rounded-lg p-3 ${isCurrent ? 'shadow-lg shadow-blue-400/50' : 'shadow-sm'}`}>
+    <div className="bg-blue-100 border-l-4 border-blue-500 rounded-lg p-3 shadow-sm">
       <div className="flex justify-between items-start">
         <p className="text-blue-900 font-semibold">vs {event.opponent}</p>
         <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded">Game</span>
