@@ -1,0 +1,80 @@
+{
+  "teamName": "BAVAP",
+  "tournamentName": "2026 Dodgeball Toronto Kickoff",
+  "events": [
+    {
+      "type": "game",
+      "time": "11:50",
+      "opponent": "Honey Packs",
+      "court": "6",
+      "firstHalfSitting": ["Josh", "Jack", "Ray"],
+      "secondHalfSitting": ["John", "Nathan H", "Ravi"]
+    },
+    {
+      "type": "break",
+      "time": "12:25"
+    },
+    {
+      "type": "game",
+      "time": "13:10",
+      "opponent": "Saiyan Elite",
+      "court": "4",
+      "firstHalfSitting": ["Logan", "Kyle", "Nathan A"],
+      "secondHalfSitting": ["Josh", "Jack", "Ray"]
+    },
+    {
+      "type": "break",
+      "time": "13:45"
+    },
+    {
+      "type": "break",
+      "time": "14:30"
+    },
+    {
+      "type": "game",
+      "time": "15:05",
+      "opponent": "Nothern Touch",
+      "court": "3",
+      "firstHalfSitting": ["John", "Nathan H", "Ravi"],
+      "secondHalfSitting": ["Logan", "Kyle", "Nathan A"]
+    },
+    {
+      "type": "ref",
+      "time": "15:50",
+      "court": "7",
+      "refs": ["John", "Nathan H", "Ravi", "Kyle"]
+    },
+    {
+      "type": "break",
+      "time": "16:25"
+    },
+    {
+      "type": "game",
+      "time": "17:10",
+      "opponent": "Fate",
+      "court": "7",
+      "firstHalfSitting": ["Josh", "Jack", "Ray"],
+      "secondHalfSitting": ["John", "Nathan H", "Ravi"]
+    },
+    {
+      "type": "ref",
+      "time": "17:45",
+      "court": "5",
+      "refs": ["Josh", "Jack", "Ray"]
+    },
+    {
+      "type": "game",
+      "time": "18:20",
+      "opponent": "Boston Heist",
+      "court": "3",
+      "firstHalfSitting": ["Logan", "Kyle", "Nathan A"],
+      "secondHalfSitting": ["Josh", "Jack", "Ray"]
+    },
+    {
+      "type": "ref",
+      "time": "18:55",
+      "court": "5",
+      "refs": ["Logan", "Kyle", "Nathan A"]
+    }
+  ]
+}

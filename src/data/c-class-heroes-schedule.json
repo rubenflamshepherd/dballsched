@@ -1,0 +1,14 @@
+{
+  "teamName": "C-Class Heroes",
+  "tournamentName": "2026 Dodgeball Toronto Kickoff",
+  "events": [
+    {
+      "type": "game",
+      "time": "12:00",
+      "opponent": "TBD",
+      "court": "1",
+      "firstHalfSitting": [],
+      "secondHalfSitting": []
+    }
+  ]
+}
