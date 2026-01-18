@@ -18,6 +18,10 @@
       "secondHalfSitting": ["Leah", "Jack", "Josh"]
     },
     {
+      "type": "break",
+      "time": "14:35"
+    },
+    {
       "type": "game",
       "time": "15:10",
       "opponent": "Mixed Berries",
