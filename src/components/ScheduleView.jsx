@@ -139,7 +139,7 @@ export default function ScheduleView({ scheduleData }) {
         showBackLink={true}
       />
       <main className="max-w-lg mx-auto">
-        <ScheduleTimeline events={filteredEvents} selectedPlayer={selectedPlayer} showPlaying={showPlaying} />
+        <ScheduleTimeline events={filteredEvents} selectedPlayer={selectedPlayer} showPlaying={showPlaying} roster={scheduleData.roster} />
       </main>
     </div>
   );

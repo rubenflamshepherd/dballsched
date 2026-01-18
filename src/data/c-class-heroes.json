@@ -1,6 +1,7 @@
 {
   "teamName": "C-Class Heroes",
   "tournamentName": "2026 Dodgeball Toronto Kickoff",
+  "roster": ["Micaela", "Ky", "Raf", "Leah", "Jack", "Josh", "Cynthia", "Scott", "David", "Hanna", "Jenn"],
   "events": [
     {
       "type": "ref",
